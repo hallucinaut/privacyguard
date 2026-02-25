@@ -2,6 +2,7 @@
 package compliance
 
 import (
+	"fmt"
 	"math"
 	"time"
 )
@@ -285,7 +286,7 @@ func GenerateComplianceReport(status *ComplianceStatus) string {
 	report += "=== Compliance Report ===\n\n"
 	report += "Regulation: " + string(status.Regulation) + "\n"
 	report += "Status: " + status.Status + "\n"
-	report += "Score: " + string(rune(int(status.Score)+48)) + "%\n"
+	report += "Score: " + fmt.Sprintf("%.0f%%", status.Score) + "%\n"
 	report += "Last Checked: " + status.LastChecked.Format("2006-01-02 15:04:05") + "\n\n"
 
 	if len(status.Issues) > 0 {

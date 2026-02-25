@@ -63,7 +63,7 @@ Examples:
   privacyguard scan /path/to/code
   privacyguard compliance GDPR
   privacyguard check
-`, "privacyguard")
+`)
 }
 
 func scanPrivacy(path string) {
@@ -84,7 +84,7 @@ func scanPrivacy(path string) {
 	fmt.Println()
 
 	// Example scanning
-	s := scan.NewScanner()
+	_ = scan.NewScanner()
 	result := &scan.ScanResult{
 		TotalFound: 25,
 		Summary: map[string]int{
